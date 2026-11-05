@@ -4,7 +4,7 @@ An experimental OpenCode desktop plugin that shows subscription usage for OpenCo
 
 - Header rings show the most-used available limit for each provider; hover for the period and percentage.
 - Switch between remaining and used percentages in the detail panel, which also shows reset times when available.
-- Usage is refreshed approximately once a minute.
+- Usage is cached for five minutes and refreshed automatically; use the refresh button to fetch it immediately.
 
 ## Installation
 

@@ -24,7 +24,7 @@ type Credential =
   | { type: "key"; key: string; metadata?: Record<string, unknown> }
   | { type: "external"; metadata?: Record<string, unknown> }
 
-const cacheFor = 60_000
+const cacheFor = 300_000
 let cached: { at: number; providers: ProviderUsage[] } | undefined
 
 export default Plugin.define({

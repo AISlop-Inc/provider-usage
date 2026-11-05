@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, onMount } from "solid-js"
+import { createSignal } from "solid-js"
 import { Command, MenuItem, Panel, Plugin, Slot, Style, type PanelTab } from "@opencode/plugin/gui"
 import { Usage } from "./rpc"
 
@@ -131,7 +131,7 @@ export default Plugin.define({
       run: () => {
         const session = ctx.sessions.current()
         if (session) ctx.layout.open(`${ctx.id}:main`, session, { tab: "select" })
-        void refresh(true)
+        void refresh(false)
       },
     }))
 
@@ -151,7 +151,7 @@ export default Plugin.define({
 
     ctx.add(Style, css)
     void refresh(false)
-    const timer = setInterval(() => void refresh(false), 60_000)
+    const timer = setInterval(() => void refresh(false), 300_000)
     return () => clearInterval(timer)
   },
 })
@@ -195,9 +195,6 @@ function UsageView(props: {
   refresh: () => void
   toggle: () => void
 }) {
-  onMount(() => props.refresh())
-  onCleanup(() => undefined)
-
   return (
     <div class="provider-usage">
       <header>
