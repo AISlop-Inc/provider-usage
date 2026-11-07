@@ -1,3 +1,6 @@
+> AISlop-Inc npm package: `@aislop-inc/opencode-provider-usage`.
+> Manual release instructions: [npm publishing](docs/NPM-PUBLISHING.md).
+
 # OpenCode Provider Usage
 
 An experimental OpenCode desktop plugin that shows subscription usage for OpenCode Go, Codex, Claude, and xAI in the session header and a detail panel.
@@ -34,3 +37,13 @@ Provider access, subscription availability, and login expiry can affect which me
 ## License
 
 [MIT](LICENSE)
+
+## npm installation
+
+After the first npm publication, add this entry to the existing OpenCode plugins array:
+
+```json
+{"plugins": ["@aislop-inc/opencode-provider-usage@latest"]}
+```
+
+Do not add it alongside a local copy of the same plugin.

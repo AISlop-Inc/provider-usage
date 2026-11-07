@@ -1,6 +1,30 @@
 {
-  "name": "opencode-provider-usage",
+  "name": "@aislop-inc/opencode-provider-usage",
   "version": "0.1.0",
-  "private": true,
-  "type": "module"
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AISlop-Inc/provider-usage.git"
+  },
+  "exports": {
+    ".": "./server.ts",
+    "./server": "./server.ts",
+    "./rpc": "./src/rpc.ts",
+    "./gui-experimental": "./gui-experimental.cjs"
+  },
+  "files": [
+    "server.ts",
+    "src/",
+    "gui-experimental.cjs"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@opencode/plugin": "2.2.5"
+  },
+  "devDependencies": {
+    "solid-js": "^1.9.10"
+  }
 }
